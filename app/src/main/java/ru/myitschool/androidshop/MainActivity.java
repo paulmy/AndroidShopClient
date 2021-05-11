@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnViewProducts = findViewById(R.id.btnViewProducts);
         btnNewProduct = findViewById(R.id.btnCreateProduct);
-        btnViewProducts.setOnClickListener(view -> {
+        btnViewProducts.setOnClickListener((View view) -> {
             Intent intent =
                     new Intent(getApplicationContext(), AllProductsActivity.class);
             startActivity(intent);
