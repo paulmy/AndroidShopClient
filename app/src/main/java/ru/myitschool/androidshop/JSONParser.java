@@ -34,7 +34,7 @@ public class JSONParser {
                                       List<NameValuePair> params) {
         try {
 
-            if (method == "POST") {
+            if (method.equals("POST")) {
                 DefaultHttpClient httpClient = new DefaultHttpClient();
                 HttpPost httpPost = new HttpPost(url);
                 httpPost.setEntity(new UrlEncodedFormEntity(params));
@@ -43,7 +43,7 @@ public class JSONParser {
                 is = httpEntity.getContent();
 
 
-            } else if (method == "GET") {
+            } else if (method.equals("GET")) {
                 DefaultHttpClient httpClient = new DefaultHttpClient();
                 String paramString = URLEncodedUtils.format(params, "utf-8");
                 url += "?" + paramString;
@@ -82,4 +82,3 @@ public class JSONParser {
     }
 
 }
-

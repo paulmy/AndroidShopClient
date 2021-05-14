@@ -11,6 +11,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
@@ -26,7 +27,7 @@ public class AllProductsActivity extends ListActivity {
     ArrayList<HashMap<String, String>> productsList;
     JSONParser jParser = new JSONParser();
     JSONArray products = null;
-    private static String url_all_products = "http://192.168.0.31/get_all_products.php";
+    private static String url_all_products = "http://192.168.0.31/shop/get_all_products.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_PRODUCTS = "products";
     private static final String TAG_PID = "pid";
@@ -69,20 +70,15 @@ public class AllProductsActivity extends ListActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(AllProductsActivity.this);
+        /*   pDialog = new ProgressDialog(AllProductsActivity.this);
             pDialog.setMessage("Загрузка списка. Подождите...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
-            pDialog.show();
+            pDialog.show();*/
+            Toast.makeText(getApplicationContext(),"Загрузка списка. Подождите...",Toast.LENGTH_LONG).show();
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            ListAdapter adapter = new SimpleAdapter(AllProductsActivity.this,
-                    productsList,
-                    R.layout.list_item, new String[]{TAG_PID, TAG_NAME}, new int[]{R.id.pid, R.id.name});
-            setListAdapter(adapter);
-        }
+
 
         @Override
         protected String doInBackground(String... strings) {
@@ -112,7 +108,13 @@ public class AllProductsActivity extends ListActivity {
 
             return null;
         }
-
+        @Override
+        protected void onPostExecute(String s) {
+            ListAdapter adapter = new SimpleAdapter(AllProductsActivity.this,
+                    productsList,
+                    R.layout.list_item, new String[]{TAG_PID, TAG_NAME}, new int[]{R.id.pid, R.id.name});
+            setListAdapter(adapter);
+        }
 
     }
 }
