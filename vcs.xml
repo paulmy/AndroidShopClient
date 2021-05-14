@@ -18,6 +18,10 @@
           <option name="url" value="https://github.com/marinaerokhina/PassActivity" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/paulmy/AndroidShopClient" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\Teacher\AndroidStudioProjects" />
