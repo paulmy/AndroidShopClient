@@ -3,5 +3,8 @@
     <account id="1982b922-4800-4e80-9a67-854b400516d5" name="Vova-SH">
       <server host="github.com" />
     </account>
+    <account id="c60ac9ea-313a-407c-aa9c-a6d43773980b" name="paulmy">
+      <server host="github.com" />
+    </account>
   </component>
 </application>
