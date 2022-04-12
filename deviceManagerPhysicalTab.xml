@@ -1,0 +1,18 @@
+<application>
+  <component name="deviceManagerPhysicalTab">
+    <physicalDevices>
+      <PhysicalDevice>
+        <key>
+          <Key>
+            <type value="SERIAL_NUMBER" />
+            <value value="127.0.0.1:21503" />
+          </Key>
+        </key>
+        <lastOnlineTime value="2022-04-12T10:53:56.390645100Z" />
+        <name value="Xiaomi MI 5s" />
+        <target value="Android 5.1" />
+        <api value="22" />
+      </PhysicalDevice>
+    </physicalDevices>
+  </component>
+</application>
